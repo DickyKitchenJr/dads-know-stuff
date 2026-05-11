@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "../components/Footer";
 
 const fredericka = localFont({
   src: "../assets/fonts/FrederickatheGreat-Regular.ttf",
@@ -10,6 +11,16 @@ const fredericka = localFont({
 const spectralSC = localFont({
   src: "../assets/fonts/SpectralSC-Regular.ttf",
   variable: "--font-spectral-sc",
+});
+
+const spectralSCBold = localFont({
+  src: "../assets/fonts/SpectralSC-Bold.ttf",
+  variable: "--font-spectral-sc-bold",
+});
+
+const spectralSCExtraBold = localFont({
+  src: "../assets/fonts/SpectralSC-ExtraBold.ttf",
+  variable: "--font-spectral-sc-extra-bold",
 });
 
 const manrope = localFont({
@@ -31,9 +42,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fredericka.variable} ${spectralSC.variable} ${manrope.variable}`}
+      className={`${fredericka.variable} ${spectralSC.variable} ${spectralSCBold.variable} ${spectralSCExtraBold.variable} ${manrope.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

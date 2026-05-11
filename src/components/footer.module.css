@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  color: var(--secondary-text-color);
+  background-color: var(--primary-color);
+  font-family: var(--font-manrope), sans-serif;
+  padding: 1rem 3.5rem;
+}
+
+.footer-small-logo {
+  width: 6rem;
+  height: auto;
+}

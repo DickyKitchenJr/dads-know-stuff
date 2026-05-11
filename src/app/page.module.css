@@ -1,1 +1,44 @@
+.screen-reader-h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  color: transparent;
+}
 
+.h1-homepage {
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.h1-logo {
+  width: 50%;
+  max-width: 42rem;
+  height: auto;
+}
+
+.hero-outer-div {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  background-color: var(--primary-background-color );
+  color: var(--primary-text-color);
+}
+
+.hero-inner-div {
+}
+
+.hero-impact-text {
+  font-family: var(--font-fredericka), serif;
+  color: var(--primary-text-color);
+  font-size: 2.5rem;
+}
