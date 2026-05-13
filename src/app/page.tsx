@@ -16,11 +16,19 @@ export default function Home() {
         <span className={styles["screen-reader-h1"]}>Dads Know Stuff</span>
       </h1>
       <div className={styles["hero-outer-div"]}>
-        <div className={styles["hero-inner-div"]}>
+        <div>
+          <p className={styles["hero-impact-text"]}>REAL LOVE.</p>
           <p className={styles["hero-impact-text"]}>REAL KNOWLEDGE.</p>
           <p className={styles["hero-impact-text"]}>REAL JOKES.</p>
-          <p className={styles["hero-impact-text"]}>REAL LOVE.</p>
-          <p className={styles["hero-impact-text"]}>REAL DADS.</p>
+          <p className={styles["hero-impact-text-standout"]}>REAL DADS.</p>
+          <div className={styles["hero-inner-div"]}>
+            <p className={styles["hero-subtext"]}>
+              Sharing all the things that make dads great,
+            </p>
+            <p className={styles["hero-subtext"]}>
+              and reminding them they are valued.
+            </p>
+          </div>
         </div>
         <Image
           src={heroImage}
