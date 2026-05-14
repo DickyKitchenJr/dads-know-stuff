@@ -17,11 +17,13 @@ export default function Home() {
       </h1>
       <div className={styles["hero-outer-div"]}>
         <div>
-          <p className={styles["hero-impact-text"]}>REAL LOVE.</p>
-          <p className={styles["hero-impact-text"]}>REAL KNOWLEDGE.</p>
-          <p className={styles["hero-impact-text"]}>REAL JOKES.</p>
-          <p className={styles["hero-impact-text-standout"]}>REAL DADS.</p>
-          <div className={styles["hero-inner-div"]}>
+          <div className={styles["hero-impact-text-div"]}>
+            <p className={styles["hero-impact-text"]}>REAL LOVE.</p>
+            <p className={styles["hero-impact-text"]}>REAL KNOWLEDGE.</p>
+            <p className={styles["hero-impact-text"]}>REAL JOKES.</p>
+          </div>
+          <p className={styles["hero-standout-text"]}>REAL DADS.</p>
+          <div className={styles["hero-subtext-div"]}>
             <p className={styles["hero-subtext"]}>
               Sharing all the things that make dads great,
             </p>
@@ -35,8 +37,11 @@ export default function Home() {
           alt="A group of dads under an arch"
           priority
           sizes="(max-width: 900px) 100vw, 808px"
-          style={{ width: "100%", maxWidth: "808px", height: "auto" }}
+          className={styles["hero-image"]}
         />
+      </div>
+      <div className={styles["divider"]}>
+        <p className={styles["divider-text"]}>Because sometimes, you just need a dad.</p>
       </div>
     </main>
   );
