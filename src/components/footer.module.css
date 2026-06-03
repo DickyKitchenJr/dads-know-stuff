@@ -3,6 +3,7 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
+  min-height: 10vh;
   color: var(--secondary-text-color);
   background-color: var(--primary-color);
   font-family: var(--font-manrope), sans-serif;

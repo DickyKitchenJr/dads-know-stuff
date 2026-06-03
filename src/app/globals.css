@@ -8,10 +8,6 @@
   --tertiary-text-color: #ad4a03;
 }
 
-html {
-  height: 100%;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
