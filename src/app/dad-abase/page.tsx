@@ -1,9 +1,16 @@
+"use client";
+
+import { jokes } from "./data";
+import { useState, useEffect } from "react";
+import styles from "./page.module.css";
+import NavBar from "@/components/NavBar";
+
 export default function DadAbase() {
+const [loadedJokes, setLoadedJokes] = useState<string[]>(() => [...jokes]);
+
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1 style={{ fontFamily: "var(--font-fredericka)" }}>
-        Dad Abase
-      </h1>
+    <main className={styles["main"]}>
+      <NavBar />
     </main>
   );
 }

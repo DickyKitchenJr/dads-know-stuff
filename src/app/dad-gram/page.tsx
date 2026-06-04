@@ -1,3 +1,10 @@
+import NavBar from "@/components/NavBar";
+import styles from "./page.module.css";
+
 export default function DadGram() {
-  return <div>Dad Gram</div>;
+  return (
+    <main className={styles["main"]}>
+      <NavBar />
+    </main>
+  );
 }
