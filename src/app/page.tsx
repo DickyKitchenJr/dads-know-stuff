@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <Image
           src={heroImage}
-          alt="A group of dads under an arch"
+          alt="semi-realistic cartoon of 5 random dads of different ethnicities standing in an arch"
           priority
           sizes="(max-width: 900px) 100vw, 808px"
           className={styles["hero-image"]}
