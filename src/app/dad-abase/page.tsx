@@ -17,7 +17,9 @@ export default function DadAbase() {
   const [jokeCount, setJokeCount] = useState(8);
   const [shownJokes, setShownJokes] = useState(loadedJokes.slice(0, jokeCount));
   const [newJoke, setNewJoke] = useState<[string, string]>(["", ""]);
-  const [submitJokeButtonDisabled, setSubmitJokeButtonDisabled] = useState(true);
+  const [submitJokeButtonDisabled, setSubmitJokeButtonDisabled] =
+    useState(true);
+  const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
 
   const loadMoreJokes = () => {
     if (jokeCount === loadedJokes.length) {
@@ -36,12 +38,14 @@ export default function DadAbase() {
   const handleJokeSetupChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewJoke((prevJoke) => [e.target.value, prevJoke[1]]);
     setSubmitJokeButtonDisabled(e.target.value === "" || newJoke[1] === "");
-  }
+  };
 
-  const handleJokePunchlineChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleJokePunchlineChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     setNewJoke((prevJoke) => [prevJoke[0], e.target.value]);
     setSubmitJokeButtonDisabled(newJoke[0] === "" || e.target.value === "");
-  }
+  };
 
   return (
     <main className={styles["main"]}>
@@ -74,8 +78,10 @@ export default function DadAbase() {
           </h2>
           <p className={styles["submit-joke-p"]}>
             Submit your dad joke to the and help us grow our collection!
-            <br/>
-            Please review our <Link href="/privacy-usage">Privacy & Usage Policy</Link> before submitting. By submitting, you are agreeing to them.
+            <br />
+            Please review our{" "}
+            <Link href="/privacy-usage">Privacy & Usage Policy</Link> before
+            submitting. By submitting, you are agreeing to them.
           </p>
           <Image
             className={styles["submit-joke-image"]}
@@ -108,7 +114,16 @@ export default function DadAbase() {
             placeholder="Enter the joke punchline here..."
             onChange={handleJokePunchlineChange}
           />
-          <button className={styles["submit-joke-button"]} type="submit" disabled={submitJokeButtonDisabled}>
+          {submissionSuccessful && (
+            <p className={styles["submit-success-message"]}>
+              Submission Successful!
+            </p>
+          )}
+          <button
+            className={styles["submit-joke-button"]}
+            type="submit"
+            disabled={submitJokeButtonDisabled}
+          >
             Submit Joke
           </button>
         </form>

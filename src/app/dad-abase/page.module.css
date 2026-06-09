@@ -134,6 +134,12 @@
   font-size: 1rem;
 }
 
+.submit-success-message {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: #355c7c;
+}
+
 .submit-joke-button {
   align-self: flex-start;
   padding: 0.75rem 1.5rem;
