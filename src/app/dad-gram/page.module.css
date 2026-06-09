@@ -2,4 +2,86 @@
   min-height: 90vh;
   display: flex;
   flex-direction: column;
+  color: var(--primary-text-color);
+}
+
+.dad-gram-outer-div {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 825px) {
+  .dad-gram-outer-div {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 825px) {
+  .dad-gram-outer-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.create-dad-gram-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-dad-gram-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  min-width: 45%;
+}
+
+.create-dad-gram-textarea {
+  padding: 0.75rem;
+  border: 2px solid var(--primary-border-color);
+  border-radius: 1rem;
+  resize: vertical;
+  min-height: 4rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+}
+
+.create-dad-gram-success-message {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: #355c7c;
+}
+
+.create-dad-gram-button {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 900;
+  border: 2px solid var(--primary-border-color);
+  border-radius: 1rem;
+  color: var(--primary-text-color);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 825px) {
+  .create-dad-gram-button {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.create-dad-gram-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+}
+
+.create-dad-gram-button:disabled {
+  background-color: var(--secondary-background-color);
+  color: var(--primary-border-color);
+  cursor: not-allowed;
 }
