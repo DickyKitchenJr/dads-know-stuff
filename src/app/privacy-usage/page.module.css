@@ -1,0 +1,52 @@
+.main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-text-color);
+  font-family: "Manrope", sans-serif;
+}
+
+.privacy-usage-outer-div {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 825px) {
+  .privacy-usage-outer-div {
+    padding: 2rem;
+  }
+}
+
+.privacy-usage-h2 {
+  font-family: "SpectralSC", serif;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2rem;
+  padding-bottom: 1rem;
+}
+
+.privacy-usage-p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.privacy-usage-h3 {
+  font-family: "SpectralSC", serif;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: solid 1px var(--primary-border-color);
+}
+
+.privacy-usage-li {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  list-style: inside;
+}

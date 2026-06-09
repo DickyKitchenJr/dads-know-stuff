@@ -15,7 +15,7 @@
 @media only screen and (min-width: 825px) {
   .jokes-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-around;
     align-content: center;
     padding: 1rem;

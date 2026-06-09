@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Dadabase from "@/assets/images/dadabase-no-text.png";
 import Image from "next/image";
 import RandomDads from "../../assets/images/rando-dads-with-arch.webp";
+import Link from "next/link";
 
 export default function DadAbase() {
   const [loadedJokes, setLoadedJokes] = useState<[string, string][]>(() => [
@@ -73,6 +74,8 @@ export default function DadAbase() {
           </h2>
           <p className={styles["submit-joke-p"]}>
             Submit your dad joke to the and help us grow our collection!
+            <br/>
+            Please review our <Link href="/privacy-usage">Privacy & Usage Policy</Link> before submitting. By submitting, you are agreeing to them.
           </p>
           <Image
             className={styles["submit-joke-image"]}
