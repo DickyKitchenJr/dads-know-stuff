@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import styles from "./page.module.css";
+import { checkForBannedWordsOrSymbols } from "@/helpers/bannedInputs";
 
 type MessagePageProps = {
   params: Promise<{
@@ -13,11 +14,12 @@ export default async function Message({ params }: MessagePageProps) {
   const { sendersName, receiversName } = await params;
   const sender=decodeURIComponent(sendersName);
   const receiver=decodeURIComponent(receiversName);
+  const bannedInputDetected = checkForBannedWordsOrSymbols(sender) || checkForBannedWordsOrSymbols(receiver);
 
   return (
     <main className={styles["main"]}>
       <NavBar />
-      {sender === undefined || receiver === undefined ? (
+      {bannedInputDetected || sender === undefined || receiver === undefined ? (
         <p className={styles["message-p"]}>
           Oops! It looks like the link you used is missing some information.
           Please make sure the link is in the correct format and try again.

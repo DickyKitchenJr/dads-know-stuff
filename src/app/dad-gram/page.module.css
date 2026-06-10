@@ -29,6 +29,12 @@
   gap: 1rem;
 }
 
+.dad-gram-h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
 .create-dad-gram-form {
   display: flex;
   flex-direction: column;
@@ -51,8 +57,19 @@
 
 .create-dad-gram-success-message {
   font-family: "Manrope", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #355c7c;
+}
+
+.create-dad-gram-link {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.create-dad-gram-error-message {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: #b30033;
 }
 
 .create-dad-gram-button {
@@ -84,4 +101,41 @@
   background-color: var(--secondary-background-color);
   color: var(--primary-border-color);
   cursor: not-allowed;
+}
+
+.add-margin-top {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 825px) {
+  .add-margin-top {
+    margin-top: 0;
+  }
+}
+
+.example-dad-gram-message-div {
+  padding: 1rem;
+  margin-top: 2rem;
+  border: 2px solid var(--primary-border-color);
+  border-radius: 1rem;
+}
+
+.example-dad-gram-message-title {
+  font-family: "SpectralSCBold", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.example-dad-gram-message-p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.example-dad-gram-message-name {
+  color: var(--primary-color);
+  font-weight: 900;
 }

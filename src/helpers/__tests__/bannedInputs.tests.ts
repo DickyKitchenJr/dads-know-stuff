@@ -35,7 +35,11 @@ describe("checkForBannedWordsOrSymbols", () => {
         "hello darkness my old friend it appears shit has hit the fan again",
       ),
     ).toBe(true);
-    expect(checkForBannedWordsOrSymbols("just another sh1t day")).toBe(true);
+    expect(
+      checkForBannedWordsOrSymbols(
+        "just another sh1t way to sneak in a curse word",
+      ),
+    ).toBe(true);
   });
 
   it("should return false for clean input", () => {
