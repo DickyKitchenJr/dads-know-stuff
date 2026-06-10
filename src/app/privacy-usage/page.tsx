@@ -9,8 +9,6 @@ export default function PrivacyUsage() {
       <Header
         title="PRIVACY & USAGE"
         subtitle="Dads Know Stuff knows that privacy and clarity are important. Please review the following information to understand how we handle information submitted to our site and how we use it."
-        logoSrc={null}
-        logoAlt={null}
       />
       <div className={styles["privacy-usage-outer-div"]}>
         <h2 className={styles["privacy-usage-h2"]}>The Simple Facts -</h2>
@@ -46,9 +44,9 @@ export default function PrivacyUsage() {
         <h3 className={styles["privacy-usage-h3"]}>What We Do:</h3>
         <ul className={styles["privacy-usage-ul"]}>
           <li className={styles["privacy-usage-li"]}>
-            We review submissions and reserve the right to remove or edit
-            any content that doesn't match the good intent of Dads Know Stuff
-            and our community.
+            We review submissions and reserve the right to remove or edit any
+            content that doesn't match the good intent of Dads Know Stuff and
+            our community.
           </li>
           <li className={styles["privacy-usage-li"]}>
             We rely on community support to succeed. In a world full of AI

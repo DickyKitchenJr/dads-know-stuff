@@ -4,3 +4,34 @@
   flex-direction: column;
   color: var(--primary-text-color);
 }
+
+.message-div {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media only screen and (min-width: 825px) {
+  .message-div {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.message-h2 {
+  font-family: "SpectralSCBold", serif;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 800;
+  padding-bottom: 1rem;
+}
+
+.message-p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}

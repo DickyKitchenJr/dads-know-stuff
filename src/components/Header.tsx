@@ -5,8 +5,8 @@ import type { StaticImageData } from "next/image";
 type HeaderProps = {
   title: string;
   subtitle: string;
-  logoSrc: StaticImageData | null;
-  logoAlt: string | null;
+  logoSrc?: StaticImageData;
+  logoAlt?: string;
 };
 
 export default function Header({ title, subtitle, logoSrc, logoAlt }: HeaderProps) {
