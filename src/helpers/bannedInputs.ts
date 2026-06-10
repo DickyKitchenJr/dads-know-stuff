@@ -581,12 +581,10 @@ export const bannedSymbols = [
   "8",
   "9",
   "!",
-  '"',
   "#",
   "$",
   "%",
   "&",
-  "'",
   "(",
   ")",
   "*",
@@ -614,7 +612,7 @@ export const bannedSymbols = [
   "~",
 ] as const;
 
-export const checkForSymbols = (input: string) => {
+export const checkForBannedSymbols = (input: string) => {
   for (const symbol of bannedSymbols) {
     if (input.includes(symbol)) {
       return true;
@@ -664,5 +662,5 @@ export const checkForBannedWords = (input: string): boolean => {
 };
 
 export const checkForBannedWordsOrSymbols = (input: string): boolean => {
-  return checkForSymbols(input) || checkForBannedWords(input);
-}
+  return checkForBannedSymbols(input) || checkForBannedWords(input);
+};
