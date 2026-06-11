@@ -21,6 +21,9 @@ export default function DadGram() {
       e.target.value === "" || receiversName === "" || checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(receiversName)
     );
     setBannedInputDetected(checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(receiversName));
+    if(createdDadGramLink.length > 0) {
+      setCreatedDadGramLink("");
+    }
   };
 
   const handleReceiversNameChange = (
@@ -31,6 +34,9 @@ export default function DadGram() {
       e.target.value === "" || sendersName === "" || checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(sendersName)
     );
     setBannedInputDetected(checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(sendersName));
+    if(createdDadGramLink.length > 0) {
+      setCreatedDadGramLink("");
+    }
   };
 
   const handleCreateDadGram = async () => {
