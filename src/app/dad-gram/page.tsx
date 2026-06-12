@@ -4,7 +4,7 @@ import NavBar from "@/components/NavBar";
 import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Dadgram from "@/assets/images/dadgram-no-text.png";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { checkForBannedWordsOrSymbols } from "@/helpers/bannedInputs";
 
 export default function DadGram() {
@@ -18,10 +18,16 @@ export default function DadGram() {
   const handleSendersNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSendersName(e.target.value);
     setCreateDadGramButtonDisabled(
-      e.target.value === "" || receiversName === "" || checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(receiversName)
+      e.target.value === "" ||
+        receiversName === "" ||
+        checkForBannedWordsOrSymbols(e.target.value) ||
+        checkForBannedWordsOrSymbols(receiversName),
     );
-    setBannedInputDetected(checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(receiversName));
-    if(createdDadGramLink.length > 0) {
+    setBannedInputDetected(
+      checkForBannedWordsOrSymbols(e.target.value) ||
+        checkForBannedWordsOrSymbols(receiversName),
+    );
+    if (createdDadGramLink.length > 0) {
       setCreatedDadGramLink("");
     }
   };
@@ -31,10 +37,16 @@ export default function DadGram() {
   ) => {
     setReceiversName(e.target.value);
     setCreateDadGramButtonDisabled(
-      e.target.value === "" || sendersName === "" || checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(sendersName)
+      e.target.value === "" ||
+        sendersName === "" ||
+        checkForBannedWordsOrSymbols(e.target.value) ||
+        checkForBannedWordsOrSymbols(sendersName),
     );
-    setBannedInputDetected(checkForBannedWordsOrSymbols(e.target.value) || checkForBannedWordsOrSymbols(sendersName));
-    if(createdDadGramLink.length > 0) {
+    setBannedInputDetected(
+      checkForBannedWordsOrSymbols(e.target.value) ||
+        checkForBannedWordsOrSymbols(sendersName),
+    );
+    if (createdDadGramLink.length > 0) {
       setCreatedDadGramLink("");
     }
   };
@@ -50,7 +62,7 @@ export default function DadGram() {
     }
   };
 
-  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleCreateDadGram();
   };
@@ -109,7 +121,9 @@ export default function DadGram() {
                 You can now paste it into an email or text message and send it
                 to the receiving dad!
                 <br />
-                <span className={styles["create-dad-gram-link"]}>Link: {createdDadGramLink}</span>
+                <span className={styles["create-dad-gram-link"]}>
+                  Link: {createdDadGramLink}
+                </span>
               </p>
             ) : null}
             {bannedInputDetected ? (
