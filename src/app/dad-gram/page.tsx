@@ -3,7 +3,7 @@
 import NavBar from "@/components/NavBar";
 import styles from "./page.module.css";
 import Header from "@/components/Header";
-import Dadgram from "@/assets/images/dadgram-no-text.png";
+import Dadgram from "@/assets/images/dadgram-no-text.webp";
 import { useState } from "react";
 import { checkForBannedWordsOrSymbols } from "@/helpers/bannedInputs";
 

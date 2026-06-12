@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
-import Dadabase from "@/assets/images/dadabase-no-text.png";
+import Dadabase from "@/assets/images/dadabase-no-text.webp";
 import Image from "next/image";
 import RandomDads from "../../assets/images/rando-dads-with-arch.webp";
 import Link from "next/link";

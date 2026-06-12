@@ -1,7 +1,7 @@
 import NavBar from "@/components/NavBar";
 import styles from "./page.module.css";
 import Header from "@/components/Header";
-import Dadfacts from "@/assets/images/dad-facts-no-text.png";
+import Dadfacts from "@/assets/images/dad-facts-no-text.webp";
 
 export default function DadFacts() {
   return (

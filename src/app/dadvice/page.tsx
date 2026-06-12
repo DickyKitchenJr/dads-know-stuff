@@ -2,7 +2,7 @@
 import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import styles from "./page.module.css";
-import DadviceImage from "@/assets/images/dadvice-no-text.png";
+import DadviceImage from "@/assets/images/dadvice-no-text.webp";
 import { dadAdvice } from "./data";
 import { useState } from "react";
 import { checkForBannedWordsOrSelectSymbols } from "@/helpers/bannedInputs";
