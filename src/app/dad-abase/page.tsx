@@ -9,7 +9,7 @@ import Dadabase from "@/assets/images/dadabase-no-text.webp";
 import Image from "next/image";
 import RandomDads from "../../assets/images/rando-dads-with-arch.webp";
 import Link from "next/link";
-import {checkForBannedWordsOrSelectSymbols} from "@/helpers/bannedInputs";
+import { checkForBannedWordsOrSelectSymbols } from "@/helpers/bannedInputs";
 
 export default function DadAbase() {
   const [loadedJokes, setLoadedJokes] = useState<[string, string][]>(() => [
@@ -41,7 +41,10 @@ export default function DadAbase() {
     const newSetup = e.target.value;
     setNewJoke((prevJoke) => [newSetup, prevJoke[1]]);
     setSubmitJokeButtonDisabled(newSetup === "" || newJoke[1] === "");
-    setBannedInputDetected(checkForBannedWordsOrSelectSymbols(newSetup) || checkForBannedWordsOrSelectSymbols(newJoke[1]));
+    setBannedInputDetected(
+      checkForBannedWordsOrSelectSymbols(newSetup) ||
+        checkForBannedWordsOrSelectSymbols(newJoke[1]),
+    );
   };
 
   const handleJokePunchlineChange = (
@@ -50,7 +53,10 @@ export default function DadAbase() {
     const newPunchline = e.target.value;
     setNewJoke((prevJoke) => [prevJoke[0], newPunchline]);
     setSubmitJokeButtonDisabled(newJoke[0] === "" || newPunchline === "");
-    setBannedInputDetected(checkForBannedWordsOrSelectSymbols(newJoke[0]) || checkForBannedWordsOrSelectSymbols(newPunchline));
+    setBannedInputDetected(
+      checkForBannedWordsOrSelectSymbols(newJoke[0]) ||
+        checkForBannedWordsOrSelectSymbols(newPunchline),
+    );
   };
 
   return (
@@ -123,6 +129,10 @@ export default function DadAbase() {
           {submissionSuccessful && (
             <p className={styles["submit-success-message"]}>
               Submission Successful!
+              <br />
+              The Council of Dads will review the dad joke, and if it meets our
+              guidelines we will add it to the page and it will be visible to
+              everyone. Thank you for your submission.
             </p>
           )}
           {bannedInputDetected ? (
