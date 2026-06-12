@@ -2,7 +2,6 @@ import styles from "./NavCards.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
-import rightArrow from "../assets/images/right-arrow.svg";
 
 type NavCardProps = {
   title: string;
