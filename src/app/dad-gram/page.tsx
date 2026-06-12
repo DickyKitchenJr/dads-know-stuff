@@ -130,7 +130,7 @@ export default function DadGram() {
               <p className={styles["create-dad-gram-error-message"]}>
                 We ban certain words and symbols from our inputs to prevent
                 misuse of our site. Please remove any inappropriate language and
-                try again.
+                symbols and try again.
               </p>
             ) : null}
           </form>

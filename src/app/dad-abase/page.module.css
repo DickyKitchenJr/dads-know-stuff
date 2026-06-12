@@ -124,6 +124,12 @@
   min-width: 45%;
 }
 
+@media only screen and (min-width: 825px) {
+  .submit-joke-form {
+    max-width: 45%;
+  }
+}
+
 .submit-joke-textarea {
   padding: 0.75rem;
   border: 2px solid var(--primary-border-color);
@@ -138,6 +144,12 @@
   font-family: "Manrope", sans-serif;
   font-size: 1rem;
   color: #355c7c;
+}
+
+.submit-joke-error-message {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: #b30033;
 }
 
 .submit-joke-button {

@@ -9,6 +9,7 @@ import Dadabase from "@/assets/images/dadabase-no-text.png";
 import Image from "next/image";
 import RandomDads from "../../assets/images/rando-dads-with-arch.webp";
 import Link from "next/link";
+import {checkForBannedWordsOrSelectSymbols} from "@/helpers/bannedInputs";
 
 export default function DadAbase() {
   const [loadedJokes, setLoadedJokes] = useState<[string, string][]>(() => [
@@ -20,6 +21,7 @@ export default function DadAbase() {
   const [submitJokeButtonDisabled, setSubmitJokeButtonDisabled] =
     useState(true);
   const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
+  const [bannedInputDetected, setBannedInputDetected] = useState(false);
 
   const loadMoreJokes = () => {
     if (jokeCount === loadedJokes.length) {
@@ -36,15 +38,19 @@ export default function DadAbase() {
   };
 
   const handleJokeSetupChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setNewJoke((prevJoke) => [e.target.value, prevJoke[1]]);
-    setSubmitJokeButtonDisabled(e.target.value === "" || newJoke[1] === "");
+    const newSetup = e.target.value;
+    setNewJoke((prevJoke) => [newSetup, prevJoke[1]]);
+    setSubmitJokeButtonDisabled(newSetup === "" || newJoke[1] === "");
+    setBannedInputDetected(checkForBannedWordsOrSelectSymbols(newSetup) || checkForBannedWordsOrSelectSymbols(newJoke[1]));
   };
 
   const handleJokePunchlineChange = (
     e: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
-    setNewJoke((prevJoke) => [prevJoke[0], e.target.value]);
-    setSubmitJokeButtonDisabled(newJoke[0] === "" || e.target.value === "");
+    const newPunchline = e.target.value;
+    setNewJoke((prevJoke) => [prevJoke[0], newPunchline]);
+    setSubmitJokeButtonDisabled(newJoke[0] === "" || newPunchline === "");
+    setBannedInputDetected(checkForBannedWordsOrSelectSymbols(newJoke[0]) || checkForBannedWordsOrSelectSymbols(newPunchline));
   };
 
   return (
@@ -77,7 +83,7 @@ export default function DadAbase() {
             Have a good dad joke for the Dad-abase?
           </h2>
           <p className={styles["submit-joke-p"]}>
-            Submit your dad joke to the and help us grow our collection!
+            Submit your dad joke and help us grow our collection!
             <br />
             Please review our{" "}
             <Link href="/privacy-usage">Privacy & Usage Policy</Link> before
@@ -119,6 +125,13 @@ export default function DadAbase() {
               Submission Successful!
             </p>
           )}
+          {bannedInputDetected ? (
+            <p className={styles["submit-joke-error-message"]}>
+              We ban certain words and symbols from our inputs to prevent misuse
+              of our site. Please remove any inappropriate language and symbols
+              and try again.
+            </p>
+          ) : null}
           <button
             className={styles["submit-joke-button"]}
             type="submit"
