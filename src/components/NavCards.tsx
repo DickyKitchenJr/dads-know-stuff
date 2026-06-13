@@ -8,8 +8,10 @@ type NavCardProps = {
   description: string;
   image: StaticImageData;
   imageAlt: string;
-  linkText: string;
-  linkHref: string;
+  linkText?: string;
+  linkHref?: string;
+  externalLinkText?: string;
+  externalLinkHref?: string;
 };
 
 export default function NavCards({
@@ -19,15 +21,24 @@ export default function NavCards({
   imageAlt,
   linkText,
   linkHref,
+  externalLinkText,
+  externalLinkHref,
 }: NavCardProps) {
   return (
     <div className={styles["nav-cards"]}>
       <Image src={image} alt={imageAlt} className={styles["nav-card-logo"]} />
       <h2 className={styles["nav-card-title"]}>{title}</h2>
       <p className={styles["nav-card-description"]}>{description}</p>
-      <Link href={linkHref} className={styles["nav-card"]}>
-        {linkText} &nbsp; &#8594;
-      </Link>
+      {linkHref && linkText && (
+        <Link href={linkHref} className={styles["nav-card"]}>
+          {linkText} &nbsp; &#8594;
+        </Link>
+      )}
+      {externalLinkHref && externalLinkText && (
+        <a href={externalLinkHref} className={styles["nav-card"]} target="_blank" rel="noopener noreferrer">
+          {externalLinkText} &nbsp; &#8594;
+        </a>
+      )}
     </div>
   );
 }

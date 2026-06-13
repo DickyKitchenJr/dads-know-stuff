@@ -76,11 +76,11 @@ export default function Home() {
         />
         <NavCards
           title="Dad Love Merch"
-          description="Help support the site and show a dad some love by grabbing some gear from our Dads Know Stuff shop."
+          description="Help support the site and show a dad some love by grabbing some gear from our Dads Know Stuff shop: Currently externally hosted on Fourthwall."
           image={merchLogo}
           imageAlt="Merch logo showing a t-shirt."
-          linkText="SHOP DAD MERCH"
-          linkHref="/merch"
+          externalLinkText="SHOP DAD MERCH"
+          externalLinkHref="https://dads-know-stuff-shop.fourthwall.com/"
         />
         <NavCards
           title="Send a Dad-gram"
