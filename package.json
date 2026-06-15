@@ -8,6 +8,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
+    "db:check": "node scripts/check-db-connection.mjs",
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch"
