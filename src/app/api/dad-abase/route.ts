@@ -39,7 +39,8 @@ export async function GET(request: NextRequest) {
     });
 
     return NextResponse.json({ jokes }, { status: 200 });
-  } catch {
+  } catch (error) {
+    console.error("dad-abase GET failed", error);
     return NextResponse.json(
       { error: "Unable to fetch dad jokes right now." },
       { status: 500 },
@@ -123,7 +124,8 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 },
     );
-  } catch {
+  } catch (error) {
+    console.error("dad-abase POST failed", error);
     return NextResponse.json(
       { error: "Unable to submit joke right now." },
       { status: 500 },

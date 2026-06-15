@@ -22,7 +22,8 @@ export async function GET() {
     });
 
     return NextResponse.json({ advice }, { status: 200 });
-  } catch {
+  } catch (error) {
+    console.error("dadvice GET failed", error);
     return NextResponse.json(
       { error: "Unable to fetch dadvice right now." },
       { status: 500 },
@@ -108,7 +109,8 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 },
     );
-  } catch {
+  } catch (error) {
+    console.error("dadvice POST failed", error);
     return NextResponse.json(
       { error: "Unable to submit advice right now." },
       { status: 500 },
