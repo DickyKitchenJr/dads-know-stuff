@@ -55,12 +55,12 @@ export default function NavBar() {
       {/* mobile and smaller screen nav bar section */}
       <div ref={mobileNavWrapperRef} className={styles["mobile-nav-wrapper"]}>
         <nav className={`${styles["nav-bar"]} ${styles["mobile-nav-bar"]}`}>
-          <Link href="/" className={styles["image-nav-link"]}>
-            <Image
-              className={styles["logo"]}
-              src={largeLogo}
-              alt="Dad's Know Stuff Logo"
-            />
+          <Link
+            href="/"
+            aria-label="Dads Know Stuff home"
+            className={styles["image-nav-link"]}
+          >
+            <Image className={styles["logo"]} src={largeLogo} alt="" />
           </Link>
           <button
             type="button"
@@ -108,12 +108,12 @@ export default function NavBar() {
 
       {/* large screen nav bar section */}
       <nav className={`${styles["nav-bar"]} ${styles["desktop-nav-bar"]}`}>
-        <Link href="/" className={styles["image-nav-link"]}>
-          <Image
-            className={styles["logo"]}
-            src={largeLogo}
-            alt="Dad's Know Stuff Logo"
-          />
+        <Link
+          href="/"
+          aria-label="Dads Know Stuff home"
+          className={styles["image-nav-link"]}
+        >
+          <Image className={styles["logo"]} src={largeLogo} alt="" />
         </Link>
         {navLinks.map((link) => {
           const isActive =

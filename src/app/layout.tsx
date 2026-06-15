@@ -6,26 +6,31 @@ import Footer from "../components/Footer";
 const fredericka = localFont({
   src: "../assets/fonts/FrederickatheGreat-Regular.ttf",
   variable: "--font-fredericka",
+  preload: false,
 });
 
 const spectralSC = localFont({
   src: "../assets/fonts/SpectralSC-Regular.ttf",
   variable: "--font-spectral-sc",
+  preload: false,
 });
 
 const spectralSCBold = localFont({
   src: "../assets/fonts/SpectralSC-Bold.ttf",
   variable: "--font-spectral-sc-bold",
+  preload: false,
 });
 
 const spectralSCExtraBold = localFont({
   src: "../assets/fonts/SpectralSC-ExtraBold.ttf",
   variable: "--font-spectral-sc-extra-bold",
+  preload: false,
 });
 
 const manrope = localFont({
   src: "../assets/fonts/Manrope-VariableFont_wght.ttf",
   variable: "--font-manrope",
+  preload: false,
 });
 
 export const metadata: Metadata = {
