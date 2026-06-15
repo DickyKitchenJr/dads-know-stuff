@@ -38,14 +38,6 @@ function getMariaDbConfigFromUrl(dbUrl: string): MariaDbConfig {
 }
 
 function getMariaDbConfig(): { config: MariaDbConfig; source: string } {
-  const dbUrl = process.env.DATABASE_URL;
-  if (dbUrl) {
-    return {
-      config: getMariaDbConfigFromUrl(dbUrl),
-      source: "DATABASE_URL",
-    };
-  }
-
   const host = process.env.MYSQL_HOST;
   const user = process.env.MYSQL_USERNAME;
   const password = process.env.MYSQL_PASSWORD;
@@ -58,6 +50,14 @@ function getMariaDbConfig(): { config: MariaDbConfig; source: string } {
     return {
       config: { host, user, password, database, port },
       source: "MYSQL_*",
+    };
+  }
+
+  const dbUrl = process.env.DATABASE_URL;
+  if (dbUrl) {
+    return {
+      config: getMariaDbConfigFromUrl(dbUrl),
+      source: "DATABASE_URL",
     };
   }
 
