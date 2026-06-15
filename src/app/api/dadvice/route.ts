@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 
+export const runtime = "nodejs";
+
 const MAX_ADVICE_LENGTH = 20000;
 const MAX_GIVER_LENGTH = 200;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;

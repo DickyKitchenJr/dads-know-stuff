@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
 
+export const runtime = "nodejs";
+
 const DEFAULT_JOKES_BATCH_SIZE = 32;
 const MAX_JOKES_BATCH_SIZE = 64;
 const MAX_SETUP_LENGTH = 10000;

@@ -38,18 +38,25 @@ function getMariaDbConfigFromUrl(dbUrl: string): MariaDbConfig {
 }
 
 function getMariaDbConfig(): { config: MariaDbConfig; source: string } {
-  const host = process.env.MYSQL_HOST;
-  const user = process.env.MYSQL_USERNAME;
-  const password = process.env.MYSQL_PASSWORD;
-  const database = process.env.MYSQL_DATABASE_NAME;
-  const port = process.env.MYSQL_PORT
-    ? Number(process.env.MYSQL_PORT)
-    : undefined;
+  const host = process.env.MYSQL_HOST ?? process.env.DB_HOST;
+  const user = process.env.MYSQL_USERNAME ?? process.env.DB_USER;
+  const password = process.env.MYSQL_PASSWORD ?? process.env.DB_PASSWORD;
+  const database = process.env.MYSQL_DATABASE_NAME ?? process.env.DB_NAME;
+  const rawPort = process.env.MYSQL_PORT ?? process.env.DB_PORT;
+  const port = rawPort ? Number(rawPort) : undefined;
 
   if (host && user && password && database) {
+    const source =
+      process.env.MYSQL_HOST ||
+      process.env.MYSQL_USERNAME ||
+      process.env.MYSQL_PASSWORD ||
+      process.env.MYSQL_DATABASE_NAME
+        ? "MYSQL_*"
+        : "DB_*";
+
     return {
       config: { host, user, password, database, port },
-      source: "MYSQL_*",
+      source,
     };
   }
 
@@ -62,7 +69,7 @@ function getMariaDbConfig(): { config: MariaDbConfig; source: string } {
   }
 
   throw new Error(
-    "Database config is missing. Set MYSQL_* vars or DATABASE_URL.",
+    "Database config is missing. Set MYSQL_*, DB_*, or DATABASE_URL.",
   );
 }
 
