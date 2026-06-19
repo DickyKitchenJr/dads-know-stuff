@@ -31,8 +31,7 @@ export default function Home() {
           <div className={styles["hero-subtext-div"]}>
             <p className={styles["hero-subtext"]}>
               Sharing all the things that make dads great,
-            </p>
-            <p className={styles["hero-subtext"]}>
+              <br className={styles["hero-hide-on-mobile"]} />
               and reminding them they are valued.
             </p>
           </div>

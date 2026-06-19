@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   width: 100%;
@@ -8,6 +9,12 @@
   background-color: var(--primary-color);
   font-family: var(--font-manrope), sans-serif;
   padding: 1rem 3.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .footer {
+    flex-direction: row;
+  }
 }
 
 .footer-small-logo {

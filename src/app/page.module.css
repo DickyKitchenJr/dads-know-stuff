@@ -126,6 +126,7 @@
 @media only screen and (min-width: 825px) {
   .hero-subtext-div {
     justify-content: center;
+    text-align: center;
   }
 }
 
@@ -133,6 +134,7 @@
   .hero-subtext-div {
     flex-direction: column;
     justify-content: flex-start;
+    text-align: left;
   }
 }
 
@@ -148,6 +150,16 @@
   .hero-subtext {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+.hero-hide-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 400px) {
+  .hero-hide-on-mobile {
+    display: inline;
   }
 }
 
