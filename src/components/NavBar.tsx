@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [
   { href: "/dad-abase", label: "Dad Abase" },
   { href: "/dadvice", label: "Dadvice" },
   { href: "/dad-facts", label: "Dad Facts" },
-  { href: "/merch", label: "Merch" },
+  { href: "https://dads-know-stuff-shop.fourthwall.com/", label: "Merch" },
   { href: "/dad-gram", label: "Dadgram" },
 ];
 
